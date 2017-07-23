@@ -13,6 +13,8 @@ import { AlbumsComponent } from './components/albums/albums.component';
 import { UsersComponent } from './components/users/users.component';
 import { AccessComponent } from './components/access/access.component';
 import {HttpClientModule} from "@angular/common/http";
+import {AlbumService} from "./shared/services/album.service";
+import {RootService} from "./shared/services/root.service";
 
 @NgModule({
   declarations: [
@@ -31,7 +33,7 @@ import {HttpClientModule} from "@angular/common/http";
       HttpClientModule,
       routes
   ],
-  providers: [],
+  providers: [RootService, AlbumService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
