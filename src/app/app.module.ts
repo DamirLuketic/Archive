@@ -11,10 +11,11 @@ import { DropdownDirective } from './shared/directives/dropdown.directive';
 import { PersonalComponent } from './components/personal/personal.component';
 import { AlbumsComponent } from './components/albums/albums.component';
 import { UsersComponent } from './components/users/users.component';
-import { AccessComponent } from './components/access/access.component';
 import {HttpClientModule} from "@angular/common/http";
 import {AlbumService} from "./shared/services/album.service";
 import {RootService} from "./shared/services/root.service";
+import {AuthService} from "./shared/services/auth.service";
+import { AuthComponent } from './components/auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -26,14 +27,14 @@ import {RootService} from "./shared/services/root.service";
     PersonalComponent,
     AlbumsComponent,
     UsersComponent,
-    AccessComponent
+    AuthComponent
   ],
   imports: [
     BrowserModule,
       HttpClientModule,
       routes
   ],
-  providers: [RootService, AlbumService],
+  providers: [RootService, AlbumService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

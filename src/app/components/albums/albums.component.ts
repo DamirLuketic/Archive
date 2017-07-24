@@ -11,26 +11,28 @@ export class AlbumsComponent implements OnInit, OnDestroy {
 
   public allAlbums = null;
 
-  private allAlbumSubscription: Subscription = null;
+  private allAlbumsSubscription: Subscription = null;
 
   constructor(private albumService: AlbumService) { }
 
   ngOnInit() {
     if(this.allAlbums == null){
         if(this.albumService.allAlbums == null){
-            this.allAlbumSubscription = this.albumService.getAllAlbums().subscribe(
+            this.allAlbumsSubscription = this.albumService.getAllAlbums().subscribe(
                 (data) => {
                   this.albumService.allAlbums = data,
                       this.allAlbums = data
-                }
+                },
+                error => console.log(error),
+                () => console.log('response compleat')
             );
         }
     }
   }
 
   ngOnDestroy(){
-    if(this.allAlbumSubscription != null){
-      this.allAlbumSubscription.unsubscribe();
+    if(this.allAlbumsSubscription != null){
+      this.allAlbumsSubscription.unsubscribe();
     }
   }
 
