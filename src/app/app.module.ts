@@ -16,6 +16,8 @@ import {AlbumService} from "./shared/services/album.service";
 import {RootService} from "./shared/services/root.service";
 import {AuthService} from "./shared/services/auth.service";
 import { AuthComponent } from './components/auth/auth.component';
+import { ProfileComponent } from './components/personal/profile/profile.component';
+import { CollectionComponent } from './components/personal/collection/collection.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { AuthComponent } from './components/auth/auth.component';
     PersonalComponent,
     AlbumsComponent,
     UsersComponent,
-    AuthComponent
+    AuthComponent,
+    ProfileComponent,
+    CollectionComponent
   ],
   imports: [
     BrowserModule,

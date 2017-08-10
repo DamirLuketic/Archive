@@ -12,4 +12,8 @@ export class AlbumService {
   getAllAlbums(){
     return this.http.get(this.root.apiRoute + 'albums_list')
   }
+
+  getCollection(id: number){
+    return this.http.post(this.root.apiRoute + 'collection', id)
+  }
 }
